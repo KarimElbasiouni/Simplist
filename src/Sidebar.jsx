@@ -1,11 +1,10 @@
 import React from 'react'
 import UserProfile from './UserProfile'
 import TaskAdder from './TaskAdder'
-import InboxButton from './InboxButton'
+import Buttons from './Buttons'
 import MyProjects from './MyProjects'
 import AppLogo from './AppLogo'
 
-import './App.css'
 
 const Sidebar = () => {
   return (
@@ -13,9 +12,7 @@ const Sidebar = () => {
         <AppLogo/>
         <UserProfile />
         <TaskAdder/>
-        <div className ="buttons">
-            <InboxButton/>
-        </div>
+        <Buttons/>
         <MyProjects />
     </div>
   )

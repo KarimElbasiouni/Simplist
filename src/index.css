@@ -19,6 +19,20 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+ul{
+  list-style: none;
+  padding: 0px;
+}
+
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+h2{
+  padding-bottom: 4px;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -26,18 +40,89 @@ a {
 }
 a:hover {
   color: #535bf2;
+  cursor: pointer;
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
 
-img, picture, video, canvas, svg {
+svg {
+  display: inline-block;
+  max-width: 100%;
+}
+img, picture, video, canvas{
   display: block;
   max-width: 100%;
 }
 
+
+.main{
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+.sidebar{
+  display: flex;
+  flex-direction: column;
+  background-color: antiquewhite;
+  color:rgba(0, 0, 0, 0.8);
+  width: 260px;
+  height: 100vh;
+  padding-block: 8px;
+  padding-inline:20px;
+  gap: 12px;
+  
+}
+.sidebar > *{
+  padding-block: 4px;
+}
+
+
+.appLogo{
+  display: flex;
+  gap: 12px;
+  
+}
+
+h1, .logo{
+  font-size: 36px;
+}
+.logo {
+    min-width: 36px;
+    margin-block: auto;
+}
+
+.sb-item > a{
+  display:flex;
+  align-items:center;
+  padding-inline: 8px;
+  border-radius:6px;
+  border:none;
+}
+
+.sb-item > a:hover{
+  display:flex;
+  align-items:center;
+  background-color:rgba(173, 243, 220, 0.683);
+
+}
+
+.icon{
+  font-size: 2rem;
+  padding-right:10px;
+}
+
+.sb-item-body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block:4rem;
+  padding-inline: 6rem;
+  color: black;
+}
+
+.sb-item-body > div {
+  width: min(700px, 90%, 70vw);
+}

@@ -1,6 +1,6 @@
 import React from 'react'
 import UserProfile from './UserProfile'
-import TaskAdder from './TaskAdder'
+import TaskFormManager from './TaskFormManager'
 import Buttons from './Buttons'
 import MyProjects from './MyProjects'
 import AppLogo from './AppLogo'
@@ -11,7 +11,7 @@ const Sidebar = () => {
     <div className = "sidebar">
         <AppLogo/>
         <UserProfile />
-        <TaskAdder/>
+        <TaskFormManager/>
         <Buttons/>
         <MyProjects />
     </div>

@@ -10,7 +10,6 @@ const Sidebar = () => {
   return (
     <div className = "sidebar">
         <AppLogo/>
-        <UserProfile />
         <TaskFormManager/>
         <Buttons/>
         <MyProjects />

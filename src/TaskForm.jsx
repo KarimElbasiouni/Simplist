@@ -8,10 +8,10 @@ const TaskForm = ({ onClose }) => {
     })
 
     const handleChange = (e) => {
-        const { data, value } = e.target;
+        const { name, value } = e.target;
         setTaskData({
             ...taskData, 
-            [data]: value
+            [name]: value
         })
     }
 
@@ -30,6 +30,7 @@ const TaskForm = ({ onClose }) => {
                     onChange= {handleChange} 
                     placeholder = "Task Name"
                 />
+
                 <input 
                     type = "date" 
                     name="date" 
@@ -37,8 +38,14 @@ const TaskForm = ({ onClose }) => {
                     onChange= {handleChange} 
                     placeholder = "Due date"
                 />
-                <button type="submit">Submit</button>
-                <button type="button" onClick={onClose}>Close</button>
+                <select name="location">
+                    <option value="inbox">Inbox</option>
+                    <option value="opt2">option2</option>
+                </select>
+                <div className = "form-btns">
+                    <button type="button" onClick={onClose}>Close</button>
+                    <button type="submit">Add Task</button>
+                </div>
             </form>
         </div>
     )

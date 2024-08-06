@@ -6,7 +6,12 @@ const Inbox = () => {
         <div>
             <h2>Inbox</h2>
             <hr/>
-            <div></div>
+            <div>
+              <p>dont forget to go through the dashboard
+                project and check how you managed to separate components
+                and replicate the same thing with the Simplist Logo;
+              </p>
+            </div>
         </div>
     </div>
   )

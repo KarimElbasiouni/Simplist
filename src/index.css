@@ -6,19 +6,75 @@
 }
 
 :root {
+  --light-mode-main-bg-color: rgba(247, 247, 247, 0.925);  
+  --light-mode-sb-bg-color: rgba(240, 240, 240, 0.925);  
+  --light-mode-font-color: rgba(9, 16, 46, 0.89) ;
+  --light-mode-complementary-blue:  rgba(54, 60, 105, 0.055); 
+
+  --dark-mode-main-bg-color: rgba(25, 29, 44, 0.89);
+  --dark-mode-sb-bg-color: rgba(30, 35, 56, 0.646);
+  --dark-mode-font-color: rgba(255, 255, 255, 0.621);
+  --dark-mode-complementary-blue:  rgba(43, 50, 78, 0.849); 
+
+  --dark-mode-logo-color: rgba(255, 255, 255, 0.792);
+    
+  --submit-form-color: rgba(4, 161, 189, 0.806);
+  --submit-form-color-hover: rgba(0, 143, 168, 0.804);
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+@media (prefers-color-scheme: dark){
+  :root{
+    background-color: var(--dark-mode-main-bg-color);
+    color: var(--dark-mode-font-color)
+  }
+  .sidebar{
+    background-color: var(--dark-mode-sb-bg-color);
+    border-right: 1px solid var(--dark-mode-complementary-blue);
+  }
+  a:hover, .add-btn:hover {
+    color: var( --light-mode-sb-bg-color);
+    background-color: var(--dark-mode-complementary-blue);
+  }
+
+  a:focus{
+    background-color: var(--dark-mode-font-color);
+    color: var(--light-mode-font-color);
+  }
+  button:focus-visible, input:focus-visible, select:focus-visible,
+  button:hover, input:hover, select:hover{
+    border: 1px solid var(--light-mode-sb-bg-color);
+  }
+}
+
+@media (prefers-color-scheme: light){
+  :root{
+    background-color: var(--light-mode-main-bg-color);
+    color: var(--light-mode-font-color)
+  }
+  .sidebar{
+    background-color: var(--light-mode-sb-bg-color);
+    border-right: 1px solid var(--light-mode-complementary-blue);
+  }
+  a:hover, .add-btn:hover{
+    background-color: var(--light-mode-complementary-blue);
+  }
+  a:focus{
+    background-color: var(--light-mode-font-color);
+    color: var(--light-mode-sb-bg-color);
+  }
+  button:focus-visible, input:focus-visible, select:focus-visible,
+  button:hover, input:hover, select:hover{
+    border: 1px solid var(--dark-mode-sb-bg-color);
+  }
+}
 ul{
   list-style: none;
   padding: 0px;
@@ -35,11 +91,10 @@ h2{
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: inherit;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
   cursor: pointer;
 }
 
@@ -57,7 +112,17 @@ img, picture, video, canvas{
   display: block;
   max-width: 100%;
 }
-
+button, input, select, textarea{
+  font-family: inherit;
+  color: inherit;
+  background-color: inherit;
+  border: 1px solid var(--light-mode-complementary-blue);
+  border-radius: 4px;
+  padding-inline: 8px;
+  padding-block: 4px;
+  outline: none;
+  font-size: 100%;
+}
 
 .main{
   display: grid;
@@ -66,17 +131,19 @@ img, picture, video, canvas{
 .sidebar{
   display: flex;
   flex-direction: column;
-  background-color: antiquewhite;
-  color:rgba(0, 0, 0, 0.8);
   width: 260px;
   height: 100vh;
   padding-block: 8px;
   padding-inline:20px;
-  gap: 12px;
+  gap: 8px;
   
 }
 .sidebar > *{
   padding-block: 4px;
+}
+
+.sidebar > .appLogo{
+  padding-bottom: 24px;
 }
 
 
@@ -94,7 +161,7 @@ h1, .logo{
     margin-block: auto;
 }
 
-.sb-item > a{
+.sb-item > a, .sb-item > button{
   display:flex;
   align-items:center;
   padding-inline: 8px;
@@ -102,10 +169,6 @@ h1, .logo{
   border:none;
 }
 
-.sb-item > a:hover{
-  background-color:rgba(173, 243, 220, 0.683);
-
-}
 
 .icon{
   font-size: 2rem;
@@ -118,7 +181,6 @@ h1, .logo{
   align-items: center;
   padding-block:4rem;
   padding-inline: 6rem;
-  color: black;
 }
 
 .sb-item-body > div {
@@ -126,20 +188,15 @@ h1, .logo{
 }
 
 .add-btn{
-  display:flex;
-  align-items:center;
-  padding-inline: 8px;
-  border-radius:6px;
   background-color: inherit;
-  border: none;
   width: 100%;
-  height: 80%;
+  height: 100%;
+  font-weight: 500;
   font-size: inherit;
 }
 .add-btn:hover{
-  background-color: rgba(0, 92, 128, 0.525);
   cursor: pointer;
-  
+  border: none;
 }
 
 .form-container{
@@ -148,8 +205,47 @@ h1, .logo{
   left: 50%;
   max-width: 300px;
   padding: 10px;
-  background-color: white;
   z-index: 8;
   box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.203) ;
   border-radius: 8px;
+  border: 1px solid rgba(188, 188, 188, 0.514);
+}
+
+form{
+  padding: 8px;
+  display:flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-btns{
+  padding-top: 16px;
+  display:flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+input[type=text], input[type=text]:focus-visible{
+  font-size: 20px;
+  border: none;
+  outline: none;
+  background-color: inherit;
+}
+
+button[type=submit]{
+  background-color: var(--submit-form-color);
+  color: whitesmoke;
+  border: none;
+}
+
+button[type=submit]:hover{
+  background-color: var(--submit-form-color-hover);
+}
+
+button[type=button]:hover{
+  background-color: var(--light-mode-sb-bg-color);
+}
+
+.sb-item-add-task{
+  align-items: center;
 }

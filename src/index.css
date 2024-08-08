@@ -9,7 +9,7 @@
   --light-mode-main-bg-color: rgba(247, 247, 247, 0.925);  
   --light-mode-sb-bg-color: rgba(240, 240, 240, 0.925);  
   --light-mode-font-color: rgba(9, 16, 46, 0.89) ;
-  --light-mode-complementary-blue:  rgba(54, 60, 105, 0.055); 
+  --light-mode-complementary-blue:  rgba(54, 60, 105, 0.105); 
 
   --dark-mode-main-bg-color: rgba(25, 29, 44, 0.89);
   --dark-mode-sb-bg-color: rgba(30, 35, 56, 0.646);
@@ -19,7 +19,7 @@
   --dark-mode-logo-color: rgba(255, 255, 255, 0.792);
     
   --submit-form-color: rgba(4, 161, 189, 0.806);
-  --submit-form-color-hover: rgba(0, 143, 168, 0.804);
+  --submit-form-color-hover: rgba(0, 129, 151, 0.804);
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -122,6 +122,7 @@ button, input, select, textarea{
   padding-block: 4px;
   outline: none;
   font-size: 100%;
+  cursor: pointer;
 }
 
 .main{
@@ -200,10 +201,12 @@ h1, .logo{
 }
 
 .form-container{
-  position: fixed;
+  background-color: white;
+  position: absolute;
   top: 20%;
-  left: 50%;
-  max-width: 300px;
+  left: 40%;
+  width: clamp(200px, 30vw, 600px);
+  /* max-width: 400px; */
   padding: 10px;
   z-index: 8;
   box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.203) ;
@@ -240,6 +243,10 @@ button[type=submit]{
 
 button[type=submit]:hover{
   background-color: var(--submit-form-color-hover);
+}
+
+button[type=button]{
+  background-color: var(--light-mode-sb-bg-color);
 }
 
 button[type=button]:hover{

@@ -1,5 +1,4 @@
 import React from 'react'
-import UserProfile from './UserProfile'
 import TaskFormManager from './TaskFormManager'
 import Buttons from './Buttons'
 import MyProjects from './MyProjects'

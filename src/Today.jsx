@@ -1,4 +1,5 @@
 import React from 'react'
+import TaskFormManager from './TaskFormManager'
 
 const Today = () => {
   return (
@@ -6,7 +7,9 @@ const Today = () => {
         <div>
             <h2>Today</h2>
             <hr/>
-            <div></div>
+            <div>
+            <TaskFormManager/>
+            </div>
         </div>
     </div>
   )

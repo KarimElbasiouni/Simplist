@@ -1,4 +1,5 @@
 import React from 'react'
+import TaskFormManager from './TaskFormManager'
 
 const Inbox = () => {
   return (
@@ -7,10 +8,7 @@ const Inbox = () => {
             <h2>Inbox</h2>
             <hr/>
             <div>
-              <p>dont forget to go through the dashboard
-                project and check how you managed to separate components
-                and replicate the same thing with the Simplist Logo;
-              </p>
+              <TaskFormManager/>
             </div>
         </div>
     </div>

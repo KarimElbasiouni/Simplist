@@ -1,6 +1,6 @@
 import { useState }from 'react'
 
-const TaskForm = ({ onClose }) => {
+const TaskForm = ({ onClose, addTask }) => {
     const [taskData, setTaskData] = useState({
         name: '',
         date: '',
@@ -17,12 +17,12 @@ const TaskForm = ({ onClose }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(taskData);
+        addTask(taskData);
         onClose();
     }
     return (
         <div className = "popup-form">
-            <form onSubmit={handleSubmit}>
+            <form action = "./toDoItems.jsx" method = "post" onSubmit={handleSubmit}>
                 <input 
                     type = "text" 
                     name="name" 

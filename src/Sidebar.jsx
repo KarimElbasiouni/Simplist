@@ -5,15 +5,17 @@ import MyProjects from './MyProjects'
 import AppLogo from './AppLogo'
 
 
-const Sidebar = () => {
+const Sidebar = ({ addTask }) => {
+
+  console.log('Sidebar received addTask:', addTask);
   return (
     <div className = "sidebar">
         <AppLogo/>
-        <TaskFormManager/>
+        <TaskFormManager addTask={addTask}/>
         <Buttons/>
         <MyProjects />
     </div>
-  )
+  ) 
 }
 
 export default Sidebar

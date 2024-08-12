@@ -2,27 +2,14 @@ import { useState, useEffect } from 'react';
 import TaskForm from './TaskForm';
 import { AddTaskIcon } from './assets/Icons';
 
-const TaskFormManager = () => {
+const TaskFormManager = ({ addTask }) => {
+
+  console.log('taskFormManager received addTask:', addTask);
 
   const [isFormOpen, setIsFormOpen] = useState(false);
-  const [tasks, setTasks] = useState([]);
-
-  useEffect(() => {
-    const savedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
-    setTasks(savedTasks);
-  }, [])
-
-  useEffect(() => {
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-  }, [tasks])
 
   const openForm = () => setIsFormOpen(true);
   const closeForm = ()  => setIsFormOpen(false);
-
-  const addTask = (task) => {
-    setTasks((prevTasks) => [...prevTasks, task ]);
-    console.log(tasks);
-  }
 
   return (
     <>

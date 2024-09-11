@@ -1,8 +1,9 @@
 # Simplist
 This is my first project using React.js which has helped me tremendously in understanding fundamental concepts in React.js coding.
+IMPORTANT: Please note that this app is inspired by [todoist](https://todoist.com/)
 
 # Preview
-- [Click here for a preview](https://tourmaline-crisp-f66708.netlify.app/inbox)
+- [Click here for a preview](https://simplist.netlify.app)
 
 # React + Vite
 

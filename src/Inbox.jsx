@@ -7,6 +7,9 @@ import { TaskCompleteIcon } from './assets/Icons.jsx'
 const Inbox = () => {
   const { inboxTasks, addTask, removeTask } = useOutletContext();
 
+  console.log("YYYYYYYYY");
+  console.log(inboxTasks);
+  
   const handleComplete = (taskId) => {
     removeTask(taskId);
   }
@@ -29,7 +32,7 @@ const Inbox = () => {
                       </button>
                       <div>{task.name}</div>
                     </div> 
-                    <div>{task.date && format(task.date, 'PP')}</div>
+                    <div>{task.date ? format(task.date, 'PP'): "No due date"}</div>
                   </div>
                 </>
               ))}

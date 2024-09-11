@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import TaskForm from './TaskForm';
 import { AddTaskIcon } from './assets/Icons';
 
-const TaskFormManager = ({ addTask }) => {
+const TaskFormManager = ({ addTask, projectId }) => {
 
   console.log('taskFormManager received addTask:', addTask);
 
@@ -21,7 +21,7 @@ const TaskFormManager = ({ addTask }) => {
       </span>
       {isFormOpen &&
         <div className ="form-container">
-          <TaskForm onClose = {closeForm} addTask = {addTask} />
+          <TaskForm onClose = {closeForm} addTask = {addTask}  projectId={projectId} />
         </div>
       }
     </>

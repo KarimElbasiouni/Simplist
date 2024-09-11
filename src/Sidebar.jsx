@@ -5,7 +5,7 @@ import MyProjects from './MyProjects'
 import AppLogo from './AppLogo'
 
 
-const Sidebar = ({ addTask }) => {
+const Sidebar = ({ addTask, projectFunctions }) => {
 
   console.log('Sidebar received addTask:', addTask);
   return (
@@ -13,7 +13,7 @@ const Sidebar = ({ addTask }) => {
         <AppLogo/>
         <TaskFormManager addTask={addTask}/>
         <Buttons/>
-        <MyProjects />
+        <MyProjects projectFunctions = {projectFunctions} />
     </div>
   ) 
 }

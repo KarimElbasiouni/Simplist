@@ -1,9 +1,15 @@
 import React from 'react'
 import TaskFormManager from './TaskFormManager'
 import { useOutletContext } from 'react-router-dom'
+import { TaskCompleteIcon } from './assets/Icons.jsx';
 
 const Today = () => {
-  const { todayTasks, addTask } = useOutletContext();
+  const { todayTasks, addTask, removeTask } = useOutletContext();
+
+  const handleComplete = (taskId) => {
+    removeTask(taskId);
+  }
+
   return (
     <div className="sb-item-body">
         <div>
@@ -11,17 +17,24 @@ const Today = () => {
             <hr/>
             <div>
               <TaskFormManager addTask = {addTask} />
-              {todayTasks.map((task, index) => (
-                <div key={index} class = "todo-item">
-                  <div>
-                    <span></span>
-                    <div>{task.name}</div>
-                  </div> 
-                </div>
+              {todayTasks.map((task) => (
+                <>
+                  <div key={task.id} className = "todo-item">
+                    <div>
+                      <button className = "complete-task-button" onClick={()=>handleComplete(task.id)}>
+                        <span>
+                          <TaskCompleteIcon/>
+                        </span>
+                      </button>
+                      <div>{task.name}</div>
+                    </div> 
+                  </div>
+                </>
               ))}
             </div>
         </div>
     </div>
+    
   )
 }
 export default Today

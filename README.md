@@ -1,5 +1,6 @@
 # Simplist
-This is my first project using React.js which has helped me tremendously in understanding fundamental concepts in React.js coding.
+This is my first project using React.js which has helped me tremendously in understanding fundamental concepts in React.js.
+
 IMPORTANT: Please note that this app is inspired by [todoist](https://todoist.com/)
 
 # Preview
